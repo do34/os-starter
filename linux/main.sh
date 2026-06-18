@@ -28,3 +28,7 @@ sudo dnf install lazygit -y
                                                                                 
 # Install neovim (required for LazyVim)                                      
 sudo dnf install neovim -y             
+
+
+mkdir -p ~/.config/yazi                                                                                                                                                                                      
+touch ~/.config/yazi/yazi.toml
