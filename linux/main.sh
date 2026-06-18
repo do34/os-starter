@@ -32,3 +32,23 @@ sudo dnf install neovim -y
 
 mkdir -p ~/.config/yazi                                                                                                                                                                                      
 touch ~/.config/yazi/yazi.toml
+
+# Install Brave Browser
+# 1. Install the dnf plugins core (if not already present)
+sudo dnf install -y dnf-plugins-core
+
+# 2. Add the Brave repository
+sudo tee /etc/yum.repos.d/brave-browser.repo << 'EOF'
+[brave-browser]
+name=Brave Browser
+baseurl=https://brave-browser-rpm-release.s3.brave.com/x86_64/
+enabled=1
+gpgcheck=1
+gpgkey=https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+EOF
+
+# 3. Import the Brave signing key
+sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+
+# 4. Install Brave Browser
+sudo dnf install -y brave-browser
