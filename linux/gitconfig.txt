@@ -1,0 +1,9 @@
+[user]
+ email = do34spm@gmail.com
+ name = D. Orlowski
+
+[url "git@github-do34"]
+ insteadOf = git@github.com
+
+
+    
